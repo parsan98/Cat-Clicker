@@ -1,0 +1,13 @@
+body {
+  background-color: snow;
+}
+
+#cat-photo {
+  height: 280px;
+  width: 360px;
+  margin: 10px;
+}
+
+#count-display {
+  margin: 20px;
+}
