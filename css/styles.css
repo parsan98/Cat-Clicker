@@ -2,7 +2,7 @@ body {
   background-color: snow;
 }
 
-#cat-photo {
+.cat-photo {
   height: 280px;
   width: 360px;
   margin: 10px;
