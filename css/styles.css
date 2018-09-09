@@ -4,10 +4,8 @@ body {
 
 .cat-photo {
   height: 280px;
-  width: 360px;
+  width: 320px;
   margin: 10px;
-}
-
-#count-display {
-  margin: 20px;
+  border: 2px;
+  border-style: solid;
 }
