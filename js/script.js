@@ -38,13 +38,19 @@ for (var i = 0; i < Cats.length; i++) {
   navBar.innerHTML += "<a class=\"nav-link\" onClick=\"displayCat(" + i + ")\">" + Cats[i]['name'] + "</a>"
 }
 
+var photoElem = document.getElementById("cat-photo");
+var currentCat = 0;
+
+document.body.onload = displayCat(currentCat);
+
 function displayCat(i){
-  document.getElementById("cat-name").innerHTML = "<h3>" + Cats[i]['name'] + "</h3>";
-  document.getElementById("cat-photo-div").innerHTML = "<img onClick=\"addtoCounter(" + i + ")\" src=\"" + Cats[i]['image'] + "\" alt=\"" + Cats[i]['name'] + "\" id=\"cat-photo\">";
-  document.getElementById("cat-counter").innerHTML = "Counter: " + Cats[i]['counter'];
+  currentCat = i;
+  document.getElementById("cat-name").innerHTML = Cats[i]['name'];
+  document.getElementById("cat-counter").innerHTML = Cats[i]['counter'];
+  photoElem.src = Cats[i]['image'];
 }
 
-function addtoCounter(i){
-  Cats[i]['counter']++;
-  document.getElementById("cat-counter").innerHTML = "Counter: " + Cats[i]['counter'];
-}
+photoElem.addEventListener("click", () => {
+  Cats[currentCat]['counter']++;
+  document.getElementById("cat-counter").innerHTML = Cats[currentCat]['counter'];
+});
