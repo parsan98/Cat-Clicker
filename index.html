@@ -8,17 +8,32 @@
     <title>Cat Clicker</title>
   </head>
 
-  <body>
+  <body onload="displayCat(0)">
 
     <head>
-      <h1> Welcome to this cat clicker </h1>
+      <h1> Cat Click Counter </h1>
       <hr>
     </head>
 
-    <h2> Click on the image to watch the count go up </h2>
-
-    <div id="cats">
+    <div id="nav">
     </div>
+
+    <hr>
+
+    <div id="display-cats">
+      <div id="cat-name"></div>
+      <div id="cat-counter"></div>
+      <div id="cat-photo-div"></div>
+    </div>
+
+    <footer>
+      <hr>
+      &copy; Copyright
+      <script>
+        document.write(new Date().getFullYear());
+      </script>
+    </footer>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/script.js"></script>

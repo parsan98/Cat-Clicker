@@ -2,10 +2,38 @@ body {
   background-color: snow;
 }
 
-.cat-photo {
-  height: 280px;
-  width: 320px;
-  margin: 10px;
+#cat-photo {
+  height: 220px;
+  width: 250px;
+  margin: 10px auto 10px auto;
   border: 2px;
   border-style: solid;
+}
+
+#cat-counter {
+  padding: 10px;
+  text-align: center;
+}
+
+#nav {
+  text-align: center;
+}
+
+.nav-link {
+  display: inline-flex;
+  width: 100px;
+  margin: 5px;
+  border: 1px;
+  border-style: solid;
+  padding: 10px;
+}
+
+#display-cats {
+  text-align: center;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  margin: 20px 0px 10px 0px;
 }

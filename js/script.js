@@ -23,20 +23,28 @@ let Cats = [
     "name" : "Hello Kitty",
     "image" : "http://media.comicbook.com/uploads1/2015/02/hello-kitty-124499.jpg",
     "counter" : "0"
+  },
+  {
+    "name" : "Cheshire Cat",
+    "image" : "https://cdn.shopify.com/s/files/1/2527/4000/products/cheshire-cat-alice-in-wonderland_2048x.jpg",
+    "counter" : "0"
   }
 ];
 
-var elem = document.createElement('div');
-document.innerHTML = "";
+var navBar = document.getElementById('nav');
+navBar.innerHTML = "";
 
-for (i = 0; i < Cats.length; i++) {
-  elem.innerHTML += "<h3>" + Cats[i]['name'] + "</h3>";
-  elem.innerHTML += "<img onClick=\"addCount(" + i + ")\" class=\"cat-photo\" src=\"" + Cats[i]['image'] + "\"><br>";
-  elem.innerHTML += "<textarea id=\"text" + i + "\">" + Cats[i]['counter'] + "</textarea><hr>"
-  document.getElementById('cats').appendChild(elem);
-};
+for (var i = 0; i < Cats.length; i++) {
+  navBar.innerHTML += "<a class=\"nav-link\" onClick=\"displayCat(" + i + ")\">" + Cats[i]['name'] + "</a>"
+}
 
-function addCount(i) {
+function displayCat(i){
+  document.getElementById("cat-name").innerHTML = "<h3>" + Cats[i]['name'] + "</h3>";
+  document.getElementById("cat-photo-div").innerHTML = "<img onClick=\"addtoCounter(" + i + ")\" src=\"" + Cats[i]['image'] + "\" alt=\"" + Cats[i]['name'] + "\" id=\"cat-photo\">";
+  document.getElementById("cat-counter").innerHTML = "Counter: " + Cats[i]['counter'];
+}
+
+function addtoCounter(i){
   Cats[i]['counter']++;
-  $('#text'+i).text(Cats[i]['counter']);
+  document.getElementById("cat-counter").innerHTML = "Counter: " + Cats[i]['counter'];
 }
