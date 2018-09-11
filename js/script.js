@@ -1,4 +1,4 @@
-let Cats = [
+var Cats = [
   {
     "name" : "Crookshanks",
     "image" : "https://vignette.wikia.nocookie.net/harrypotter/images/7/71/CrookshanksPottermore.png",
@@ -32,25 +32,64 @@ let Cats = [
 ];
 
 var navBar = document.getElementById('nav');
-navBar.innerHTML = "";
 
-for (var i = 0; i < Cats.length; i++) {
-  navBar.innerHTML += "<a class=\"nav-link\" onClick=\"displayCat(" + i + ")\">" + Cats[i]['name'] + "</a>"
-}
+let photoElem = document.getElementById("cat-photo");
+let adminForm = document.getElementById("admin-form");
+let adminBtn = document.getElementById("admin-btn");
+let nameInput = document.getElementById("name-input");
+let imgInput = document.getElementById("img-input");
+let catDisplay = document.getElementById("display-cats");
+let currentCat = 0;
 
-var photoElem = document.getElementById("cat-photo");
-var currentCat = 0;
-
-document.body.onload = displayCat(currentCat);
+document.body.onload = (() => {
+  displayCat(currentCat);
+  setNav();
+});
 
 function displayCat(i){
   currentCat = i;
   document.getElementById("cat-name").innerHTML = Cats[i]['name'];
   document.getElementById("cat-counter").innerHTML = Cats[i]['counter'];
   photoElem.src = Cats[i]['image'];
+  photoElem.alt =  Cats[i]['name'];
+  nameInput.value = Cats[i]['name'];
+  imgInput.value =  Cats[i]['image'];
+  adminForm.style.display = "none";
+}
+
+function setNav(){
+  navBar.innerHTML = "";
+  for (var i = 0; i < Cats.length; i++) {
+    navBar.innerHTML += "<a class=\"nav-link\" onClick=\"displayCat(" + i + ")\">" + Cats[i]['name'] + "</a>"
+  }
 }
 
 photoElem.addEventListener("click", () => {
   Cats[currentCat]['counter']++;
   document.getElementById("cat-counter").innerHTML = Cats[currentCat]['counter'];
+});
+
+adminBtn.addEventListener("click", () => {
+  adminForm.style.display = "block";
+  adminBtn.style.display = "none";
+});
+
+document.getElementById("admin-cancel").addEventListener("click", ()=>{
+  nameInput.value = Cats[currentCat]['name'];
+  imgInput.value =  Cats[currentCat]['image'];
+  adminForm.style.display = "none";
+  adminBtn.style.display = "block";
+});
+
+document.getElementById("admin-ok").addEventListener("click", ()=>{
+  if ((nameInput.value != "") & (imgInput.value != "")) {
+    Cats[currentCat]['name'] = nameInput.value;
+    Cats[currentCat]['image'] = imgInput.value;
+    displayCat(currentCat);
+    setNav();
+    adminForm.style.display = "none";
+    adminBtn.style.display = "block";
+  } else {
+    alert("Please don't pass in a blank value!")
+  }
 });

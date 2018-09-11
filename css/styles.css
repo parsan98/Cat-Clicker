@@ -32,6 +32,17 @@ body {
   text-align: center;
 }
 
+#addBlock {
+  float: right;
+  text-align: center;
+  margin: 20px;
+}
+
+.admin-input {
+  margin: 5px;
+  width: 500px;
+}
+
 footer {
   width: 100%;
   text-align: center;

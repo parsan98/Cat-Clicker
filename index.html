@@ -20,6 +20,23 @@
 
     <hr>
 
+    <div id="addBlock">
+      <button id="admin-btn">Edit</button>
+        <form id="admin-form">
+          <label for="name-input"> Name of the cat </label>
+          <br>
+          <input id="name-input" class="admin-input">
+          <br>
+          <label for="img-input"> Image URL </label>
+          <br>
+          <input id="img-input" class="admin-input">
+          <br>
+          <a id="admin-cancel" class="admin-input">Cancel</a>
+          <br>
+          <a id="admin-ok" class="admin-input">OK</a>
+      </form>
+    </div>
+
     <div id="display-cats">
       <h3 id="cat-name"></h3>
       <p> Counter: <span id="cat-counter"></span> </p>
@@ -28,10 +45,7 @@
 
     <footer>
       <hr>
-      &copy; Copyright
-      <script>
-        document.write(new Date().getFullYear());
-      </script>
+      &copy; Copyright 2018
     </footer>
 
 
