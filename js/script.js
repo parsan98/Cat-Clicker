@@ -60,7 +60,7 @@ function displayCat(i){
 function setNav(){
   navBar.innerHTML = "";
   for (var i = 0; i < Cats.length; i++) {
-    navBar.innerHTML += "<a class=\"nav-link\" onClick=\"displayCat(" + i + ")\">" + Cats[i]['name'] + "</a>"
+    navBar.innerHTML += "<a class=\"btn btn-outline-primary m-1\" onClick=\"displayCat(" + i + ")\">" + Cats[i]['name'] + "</a>"
   }
 }
 
