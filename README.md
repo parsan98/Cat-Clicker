@@ -2,6 +2,8 @@
 
 A front end web project using HTML, CSS, JavaScript and Bootstrap
 
+Live page at https://parsan98.github.io/Cat-Clicker/
+
 
 
 ## Features
@@ -23,7 +25,7 @@ A front end web project using HTML, CSS, JavaScript and Bootstrap
 ## Getting started
 
 1. Download the repository and unzip the contents.
-2. Open ``index.html`` on your web browser. 
+2. Open ``docs/index.html`` on your web browser. 
 
 
 
