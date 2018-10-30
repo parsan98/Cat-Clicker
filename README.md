@@ -2,7 +2,7 @@
 
 A front end web project using HTML, CSS, JavaScript and Bootstrap
 
-Live page at https://parsan98.github.io/Cat-Clicker/
+Live page at https://parvathy-santhosh.github.io/Cat-Clicker/
 
 
 
